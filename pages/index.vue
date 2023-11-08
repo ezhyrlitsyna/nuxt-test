@@ -1,5 +1,4 @@
 <template>
-    <p>Fix me</p>
     <div class="fixed top-16 w-56 text-right">
     <Menu as="div" class="relative inline-block text-left">
       <div>
