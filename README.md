@@ -1,26 +1,76 @@
-# inext-vue-test-task
+# Nuxt 3 Minimal Starter
 
-**Task Description:**
+Node >=16.20.2 , yarn
 
-- **Objective:** Fix and improve this simple single-page Nuxt application.
+## Setup
 
-- **Instructions:**
-   - Clone this repository.
-   - Fix the application styling by adding Tailwind.
-   - Implement responsive design for the application.
-   - Replace the current Headless UI with NuxtUI for a dropdown menu.
-   - Place the options button in the center of the page.
-   - Move the dropdown to a separate component.
-   - Add heroicons to the dropdown menu items.
-   - Add dark mode toggle button.
-   - Compile project and inlcude compiling instructions.
-   - Bonus task 1: Add a single `.html` compiled verion of the project with all `JS` and `CSS` inlined.
-   - Bonus task 2: Add instructions on how to run and build project using Docker.
+Make sure to install the dependencies:
 
-- **Version Control:** Use Git for version control and make regular commits with meaningful commit messages.
+```bash
 
-- **Documentation:** Provide clear and concise documentation on how to build and run the application.
+yarn install
 
-**Submission:**
+```
 
-Applicants should provide a link to their Git repository containing the completed task and any necessary instructions for running the application.
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+
+yarn nuxt dev
+
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+
+yarn nuxt build
+
+```
+
+Locally preview production build:
+
+```bash
+
+yarn nuxt preview
+
+```
+To generate a static version of your application.
+
+
+```bash
+
+yarn nuxt generate
+
+```
+
+**DOCKER**
+
+## Build the Docker Image
+
+```bash
+
+docker-compose build
+
+```
+
+##  Run the Docker Container
+
+```bash
+
+docker-compose up
+
+```
+
+## Stop and Remove the Container
+
+
+```bash
+
+docker-compose down
+
+```
