@@ -1,4 +1,5 @@
 <template>
+  <client-only>
   <div class="flex h-screen w-full justify-center items-center relative">
     <UToggle
       :model-value="themeToggleState"
@@ -15,10 +16,11 @@
       :ui="{ item: { shortcuts: 'block' } }"
     />
   </div>
+</client-only>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import Dropdown from '~/components/Dropdown.vue';
 const items = [
   [
@@ -64,8 +66,15 @@ const items = [
 const themeToggleState = ref(false);
 function theme() {
   themeToggleState.value = !themeToggleState.value;
+  debugger
   document.documentElement.classList.toggle('dark');
 }
+
+onMounted(() => {
+  if(process.client) {
+    themeToggleState.value = document.documentElement.classList?.[0] === 'dark'
+  }
+})
 </script>
 <style>
 html.dark {
