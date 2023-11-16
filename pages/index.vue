@@ -1,14 +1,13 @@
 <template>
-  <button
-    @click="theme()"
-    class="mt-4 w-12 h-6 rounded-full p-1 bg-gray-400 dark:bg-gray-600 relative transition-colors duration-500 ease-in focus:outline-none focus:ring-2 focus:ring-blue-700 dark:focus:ring-blue-600 focus:border-transparent"
-  >
-    <div
-      id="toggle"
-      class="rounded-full w-4 h-4 bg-blue-600 dark:bg-blue-500 relative ml-0 dark:ml-6 pointer-events-none transition-all duration-300 ease-out"
+  <div class="flex h-screen w-full justify-center items-center relative">
+    <UToggle
+      :model-value="themeToggleState"
+      color="blue"
+      on-icon="i-heroicons-moon-20-solid"
+      off-icon="i-heroicons-sun-20-solid"
+      class="fixed top-4 left-4"
+      @click="theme()"
     />
-  </button>
-  <div class="flex h-screen w-full justify-center items-center">
     <Dropdown
       :items="items"
       label="Options"
@@ -19,7 +18,8 @@
 </template>
 
 <script setup>
-import Dropdown from '~/components/Dropdown.vue'
+import { ref } from 'vue';
+import Dropdown from '~/components/Dropdown.vue';
 const items = [
   [
     {
@@ -61,7 +61,9 @@ const items = [
   ],
 ];
 
+const themeToggleState = ref(false);
 function theme() {
+  themeToggleState.value = !themeToggleState.value;
   document.documentElement.classList.toggle('dark');
 }
 </script>
