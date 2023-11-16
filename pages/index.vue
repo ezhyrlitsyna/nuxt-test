@@ -68,18 +68,3 @@ const isDark = computed({
   }
 });
 </script>
-<style>
-html.dark {
-  --tw-bg-opacity: 1;
-  background-color: rgba(31, 41, 55 var(--tw-bg-opacity));
-}
-
-html.dark .dark\:ml-6 {
-  margin-left: 1.5rem;
-}
-
-html.dark .dark\:bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
-}
-</style>
