@@ -18,8 +18,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import Dropdown from '~/components/Dropdown.vue';
 const items = [
   [
     {
