@@ -11,7 +11,7 @@
       :items="items"
       label="Options"
       :popper="{ placement: 'bottom-start' }"
-      :ui="{ item: { shortcuts: 'block' } }"
+      :ui="{ item: { shortcuts: 'inline-flex' } }"
     />
   </div>
 </template>
