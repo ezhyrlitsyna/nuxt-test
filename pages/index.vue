@@ -1,25 +1,22 @@
 <template>
   <div class="flex h-screen w-full justify-center items-center relative">
     <UToggle
-      :model-value="themeToggleState"
+      v-model="isDark"
       color="blue"
       on-icon="i-heroicons-moon-20-solid"
       off-icon="i-heroicons-sun-20-solid"
       class="fixed top-4 left-4"
-      @click="theme()"
     />
     <Dropdown
       :items="items"
       label="Options"
       :popper="{ placement: 'bottom-start' }"
-      :ui="{ item: { shortcuts: 'block' } }"
+      :ui="{ item: { shortcuts: 'inline-flex' } }"
     />
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import Dropdown from '~/components/Dropdown.vue';
 const items = [
   [
     {
@@ -61,24 +58,13 @@ const items = [
   ],
 ];
 
-const themeToggleState = ref(false);
-function theme() {
-  themeToggleState.value = !themeToggleState.value;
-  document.documentElement.classList.toggle('dark');
-}
+const colorMode = useColorMode();
+const isDark = computed({
+  get () {
+    return colorMode.value === 'dark';
+  },
+  set (newVal) {
+    colorMode.preference = newVal ? 'dark' : 'light';
+  }
+});
 </script>
-<style>
-html.dark {
-  --tw-bg-opacity: 1;
-  background-color: rgba(31, 41, 55 var(--tw-bg-opacity));
-}
-
-html.dark .dark\:ml-6 {
-  margin-left: 1.5rem;
-}
-
-html.dark .dark\:bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
-}
-</style>
