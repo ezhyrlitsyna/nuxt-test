@@ -9,17 +9,7 @@
       class="fixed top-4 left-4"
       @click="theme()"
     />
-    <UDropdown
-    :items="items"
-    :popper="popper"
-    :ui="ui"
-  >
-    <UButton
-      color="white"
-      :label="label"
-      trailing-icon="i-heroicons-chevron-down-20-solid"
-    />
-  </UDropdown>
+    <Dropdown1 />
   </div>
 </client-only>
 </template>
