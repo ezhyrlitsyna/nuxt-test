@@ -11,7 +11,7 @@
     />
     <Dropdown
       :items="items"
-      label="Options"
+      label="Options111"
       :popper="{ placement: 'bottom-start' }"
       :ui="{ item: { shortcuts: 'block' } }"
     />
