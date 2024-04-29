@@ -9,12 +9,17 @@
       class="fixed top-4 left-4"
       @click="theme()"
     />
-    <Dropdown
-      :items="items"
-      label="Options111"
-      :popper="{ placement: 'bottom-start' }"
-      :ui="{ item: { shortcuts: 'block' } }"
+    <UDropdown
+    :items="items"
+    :popper="popper"
+    :ui="ui"
+  >
+    <UButton
+      color="white"
+      :label="label"
+      trailing-icon="i-heroicons-chevron-down-20-solid"
     />
+  </UDropdown>
   </div>
 </client-only>
 </template>
